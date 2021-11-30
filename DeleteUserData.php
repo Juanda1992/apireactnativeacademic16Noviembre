@@ -12,13 +12,13 @@ $json = file_get_contents('php://input');
 
 $obj = json_decode($json,true);
  
-$S_ID = $obj['student_id'];
+$S_ID = $obj['user_id'];
  
-$Sql_Query = "DELETE FROM StudentDetailsTable WHERE student_id = '$S_ID'" ;
+$Sql_Query = "DELETE FROM User WHERE user_id = '$S_ID'" ;
 
 if(mysqli_query($con,$Sql_Query)){
  
-$MSG = 'Estudiante eliminado correctamente...' ;
+$MSG = 'Usuario eliminado correctamente...' ;
  
 $json = json_encode($MSG);
  

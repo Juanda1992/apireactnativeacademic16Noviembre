@@ -14,9 +14,9 @@ $json = file_get_contents('php://input');
  
 $obj = json_decode($json,true);
 
-$S_ID = $obj['student_id'];
+$S_ID = $obj['user_id'];
 
-$sql = "SELECT * FROM StudentDetailsTable WHERE student_id = '$S_ID'";
+$sql = "SELECT * FROM user WHERE user_id = '$S_ID'";
 $result = $conn->query($sql);
 $json = '';
 if ($result->num_rows > 0) {
@@ -25,7 +25,7 @@ if ($result->num_rows > 0) {
         $json = json_encode($item);
     }
 } else {
-    $json = "El estudiante no se encuentra ...";
+    $json = "El usuario no se encuentra ...";
 }
 echo $json;
 $conn->close();

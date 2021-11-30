@@ -1,6 +1,6 @@
 <?php
 $HostName = "localhost";
-$DatabaseName = "dbacademic";
+$DatabaseName = "biblioteca";
 $HostUser = "root";
 $HostPass = "";
 ?>

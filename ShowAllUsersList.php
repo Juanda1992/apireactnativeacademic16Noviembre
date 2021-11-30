@@ -11,7 +11,7 @@ $conn = new mysqli($HostName, $HostUser, $HostPass, $DatabaseName);
 if ($conn->connect_error) {
  die("Conexión fallida: " . $conn->connect_error);
 } 
-$sql = "SELECT * FROM StudentDetailsTable";
+$sql = "SELECT * FROM user";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while($row[] = $result->fetch_assoc()) {
@@ -21,7 +21,7 @@ if ($result->num_rows > 0) {
 }
 else
 {
- echo "No hay estudiantes para mostrar";
+ echo "No hay usuarios para mostrar";
 }
 echo $json;
 $conn->close();

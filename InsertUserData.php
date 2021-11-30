@@ -17,21 +17,21 @@ include 'DBConfig.php';
  $obj = json_decode($json,true);
  
  // Crear variables por cada campo.
- $S_Name = $obj['student_name'];
+ $S_Name = $obj['user_name'];
  
- $S_Class = $obj['student_class'];
+ $S_Phone = $obj['user_phone'];
  
- $S_Phone_Num = $obj['student_phone_num'];
+ $S_Email = $obj['user_email'];
  
- $S_Email = $obj['student_email'];
+ $S_Password = $obj['user_password'];
  
  // Instrucción SQL para agregar el estudiante.
- $Sql_Query = "insert into StudentDetailsTable (student_name,student_class,student_phone_num,student_email) values ('$S_Name','$S_Class','$S_Phone_Num','$S_Email')";
+ $Sql_Query = "insert into User (user_name,user_phone,user_email,user_password) values ('$S_Name','$S_Phone','$S_Email','$S_Password')";
  
  
  if(mysqli_query($con,$Sql_Query)){
  
-    $MSG = 'Estudiante registrado correctamente...' ;
+    $MSG = 'Usuario registrado correctamente...' ;
     
     $json = json_encode($MSG);
  
